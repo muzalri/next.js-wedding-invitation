@@ -1,26 +1,88 @@
 @import "tailwindcss";
+@import "tailwindcss/preflight";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #f8f3e8;
+  --brown: #6d4c3d;
+  --gold: #d4af37;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  overflow-y: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
+  color: var(--brown);
+  font-family: var(--font-roboto);
+  overflow-x: hidden;
+}
+
+.font-dancing {
+  font-family: var(--font-dancing);
+}
+
+.font-greatvibes {
+  font-family: var(--font-greatvibes);
+}
+
+.font-roboto {
+  font-family: var(--font-roboto);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeSlideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideDown {
+  from { 
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-fadeSlideUp {
+  animation: fadeSlideUp 1s ease-out;
+}
+
+.animate-fadeSlideDown {
+  animation: fadeSlideDown 1s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 1s ease-out;
 }

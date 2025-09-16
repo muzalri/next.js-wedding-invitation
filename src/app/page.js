@@ -1,103 +1,285 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import Countdown from "@/components/Countdown";
+import RSVPForm from "@/components/RSVPForm";
+import CoverPage from "@/components/CoverPage";
+import AudioPlayer from "@/components/AudioPlayer";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isOpen, setIsOpen] = useState(false);
+  const [musicAllowed, setMusicAllowed] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  // Set wedding date - example: December 25, 2025
+  const weddingDate = "2025-12-25T09:00:00";
+  
+  // Function to scroll to section
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <>
+      {/* Cover Section - Initially visible */}
+      <section className={`fixed inset-0 z-50 transition-all duration-1000 ease-in-out ${isOpen ? 'translate-y-[-100%]' : 'translate-y-0'}`}>
+        <div className="absolute inset-0 backdrop-blur-sm z-10 bg-cream/30"></div>
+        <CoverPage onOpen={() => {
+          setIsOpen(true);
+          setMusicAllowed(true);
+        }} />
+      </section>
+      
+      {/* Audio Player */}
+      {isOpen && (
+        <AudioPlayer 
+          src="/audio/wedding-song.mp3" 
+          autoPlayOnOpen={musicAllowed}
+        />
+      )}
+
+      {/* Main Content - Visible after clicking "Open Invitation" */}
+      <main className="bg-cream text-brown overflow-x-hidden overflow-y-auto h-screen">
+        {/* Fixed Navigation */}
+        <nav className="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-40 flex space-x-3 px-3 py-2.5 rounded-full bg-brown/90 backdrop-blur-md shadow-lg border border-gold/40">
+          <button onClick={() => scrollToSection('home')} className="w-10 h-10 rounded-full bg-gold/80 flex items-center justify-center text-brown hover:bg-gold hover:scale-110 transition-all duration-300">
+            <span className="sr-only">Home</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </button>
+          <button onClick={() => scrollToSection('couple')} className="w-10 h-10 rounded-full bg-cream/80 flex items-center justify-center text-brown hover:bg-gold hover:scale-110 transition-all duration-300">
+            <span className="sr-only">Couple</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </button>
+          <button onClick={() => scrollToSection('event')} className="w-10 h-10 rounded-full bg-cream/80 flex items-center justify-center text-brown hover:bg-gold hover:scale-110 transition-all duration-300">
+            <span className="sr-only">Event</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </button>
+          <button onClick={() => scrollToSection('gallery')} className="w-10 h-10 rounded-full bg-cream/80 flex items-center justify-center text-brown hover:bg-gold hover:scale-110 transition-all duration-300">
+            <span className="sr-only">Gallery</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </button>
+          <button onClick={() => scrollToSection('rsvp')} className="w-10 h-10 rounded-full bg-cream/80 flex items-center justify-center text-brown hover:bg-gold hover:scale-110 transition-all duration-300">
+            <span className="sr-only">RSVP</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </button>
+        </nav>
+        
+        {/* Hero Section */}
+        <section id="home" className="min-h-screen flex flex-col items-center justify-center text-center px-6 py-16 bg-cream relative">
+          <div className="absolute inset-0 bg-[url('/images/flowers-and-leaves.png')] bg-repeat opacity-5"></div>
+          <div className="max-w-4xl mx-auto w-full relative z-10 animate-fadeIn flex flex-col items-center justify-center">
+            <div className="w-64 md:w-80 mx-auto mb-6 flex justify-center">
+              <Image 
+                src="/images/bismillah.png" 
+                alt="Bismillahirrahmanirrahim" 
+                width={320}
+                height={100}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
+            <h3 className="font-dancing text-xl md:text-3xl text-gold mb-3 animate-fadeSlideDown">Kami Akan Menikah</h3>
+            <h1 className="font-greatvibes text-5xl md:text-7xl text-brown my-4 animate-fadeSlideUp">Budi & Ani</h1>
+            <p className="font-roboto text-lg text-brown mb-6 animate-fadeIn">25.12.2025</p>
+            <div className="flex justify-center w-full">
+              <Countdown targetDate={weddingDate} />
+            </div>
+            <div className="mt-12 mb-4 flex justify-center">
+              <Image 
+                src="/images/divider-flower.png" 
+                alt="Divider" 
+                width={200}
+                height={30}
+                className="mx-auto w-40 md:w-48 h-auto opacity-80"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Couple Section */}
+        <section className="py-16 px-6 bg-cream relative" id="couple">
+          <div className="absolute inset-0 bg-[url('/images/flowers-and-leaves.png')] bg-repeat opacity-5"></div>
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <div className="mb-6">
+              <Image 
+                src="/images/divider-flowers-leaves.png" 
+                alt="Divider" 
+                width={150}
+                height={30}
+                className="mx-auto w-32 md:w-40 h-auto opacity-70"
+              />
+            </div>
+            <h2 className="font-greatvibes text-4xl md:text-5xl text-brown mb-6">Mempelai</h2>
+            <div className="w-16 h-0.5 bg-gold mx-auto mb-8"></div>
+            <div className="grid md:grid-cols-2 gap-6 md:gap-10">
+              <div className="bride p-5 sm:p-6 bg-white rounded-lg border border-gold/30 shadow-md relative">
+                <div className="absolute top-0 left-0 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-no-repeat bg-contain opacity-40"></div>
+                <div className="absolute bottom-0 right-0 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-no-repeat bg-contain opacity-40 rotate-180"></div>
+                <div className="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden mx-auto mb-4 bg-gray-100 border-4 border-gold/20 shadow-lg">
+                  {/* Replace with bride's photo */}
+                  <div className="h-full w-full flex items-center justify-center text-gray-400 bg-cream/50">Foto</div>
+                </div>
+                <h3 className="font-greatvibes text-2xl sm:text-3xl text-gold mb-2">Ani Wulandari</h3>
+                <p className="text-sm mb-1">Putri dari</p>
+                <p className="font-medium">Bapak & Ibu Wulandari</p>
+              </div>
+              <div className="groom p-5 sm:p-6 bg-white rounded-lg border border-gold/30 shadow-md relative">
+                <div className="absolute top-0 right-0 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-no-repeat bg-contain opacity-40 rotate-90"></div>
+                <div className="absolute bottom-0 left-0 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-no-repeat bg-contain opacity-40 -rotate-90"></div>
+                <div className="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden mx-auto mb-4 bg-gray-100 border-4 border-gold/20 shadow-lg">
+                  {/* Replace with groom's photo */}
+                  <div className="h-full w-full flex items-center justify-center text-gray-400 bg-cream/50">Foto</div>
+                </div>
+                <h3 className="font-greatvibes text-2xl sm:text-3xl text-gold mb-2">Budi Santoso</h3>
+                <p className="text-sm mb-1">Putra dari</p>
+                <p className="font-medium">Bapak & Ibu Santoso</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Event Details Section */}
+        <section className="py-16 px-6 bg-brown text-cream relative" id="event">
+          <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <div className="mb-6">
+              <Image 
+                src="/images/divider1-white.png" 
+                alt="Divider" 
+                width={150}
+                height={30}
+                className="mx-auto w-32 h-auto opacity-80"
+              />
+            </div>
+            <h2 className="font-greatvibes text-4xl md:text-5xl mb-8">Acara Pernikahan</h2>
+            <div className="w-16 h-0.5 bg-gold mx-auto mb-10"></div>
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+              <div className="ceremony p-5 sm:p-6 border border-gold/60 rounded-lg bg-brown/80 backdrop-blur-sm shadow-lg relative">
+                {/* Flower decoration */}
+                <div className="absolute -top-4 -left-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 hidden sm:block"></div>
+                <div className="absolute -bottom-4 -right-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 rotate-180 hidden sm:block"></div>
+                
+                <div className="relative z-10">
+                  <h3 className="font-greatvibes text-2xl sm:text-3xl text-gold mb-3">Akad Nikah</h3>
+                  <div className="w-16 h-0.5 bg-gold/60 mx-auto mb-4"></div>
+                  <div className="space-y-2">
+                    <p className="mb-1"><strong className="text-gold">Tanggal:</strong> Kamis, 25 Desember 2025</p>
+                    <p className="mb-1"><strong className="text-gold">Waktu:</strong> 09:00 WIB</p>
+                    <p className="mb-4"><strong className="text-gold">Tempat:</strong> Grand Ballroom, Hotel Majestic</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" 
+                     className="inline-block px-4 py-2 mt-2 border border-gold text-gold rounded hover:bg-gold hover:text-brown transition-colors">
+                    Lihat Lokasi
+                  </a>
+                </div>
+              </div>
+              <div className="reception p-5 sm:p-6 border border-gold/60 rounded-lg bg-brown/80 backdrop-blur-sm shadow-lg relative">
+                {/* Flower decoration */}
+                <div className="absolute -top-4 -left-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 hidden sm:block"></div>
+                <div className="absolute -bottom-4 -right-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 rotate-180 hidden sm:block"></div>
+                
+                <div className="relative z-10">
+                  <h3 className="font-greatvibes text-2xl sm:text-3xl text-gold mb-3">Resepsi</h3>
+                  <div className="w-16 h-0.5 bg-gold/60 mx-auto mb-4"></div>
+                  <div className="space-y-2">
+                    <p className="mb-1"><strong className="text-gold">Tanggal:</strong> Kamis, 25 Desember 2025</p>
+                    <p className="mb-1"><strong className="text-gold">Waktu:</strong> 13:00 WIB</p>
+                    <p className="mb-4"><strong className="text-gold">Tempat:</strong> Grand Ballroom, Hotel Majestic</p>
+                  </div>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" 
+                     className="inline-block px-4 py-2 mt-2 border border-gold text-gold rounded hover:bg-gold hover:text-brown transition-colors">
+                    Lihat Lokasi
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery Section */}
+        <section className="py-16 px-6 bg-cream relative" id="gallery">
+          <div className="absolute inset-0 bg-[url('/images/flowers-and-leaves.png')] bg-repeat opacity-5"></div>
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <div className="mb-6">
+              <Image 
+                src="/images/divider-leaves.png" 
+                alt="Divider" 
+                width={150}
+                height={30}
+                className="mx-auto w-32 h-auto opacity-70"
+              />
+            </div>
+            <h2 className="font-greatvibes text-4xl md:text-5xl text-brown mb-8">Galeri Kami</h2>
+            <div className="w-16 h-0.5 bg-gold mx-auto mb-10"></div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+              {[1, 2, 3, 4, 5, 6].map((item) => (
+                <div key={item} className="aspect-square bg-white/80 rounded-lg overflow-hidden flex items-center justify-center text-gray-400 border border-gold/30 shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <span className="font-dancing text-brown/70">Foto {item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* RSVP Section */}
+        <section className="py-16 px-6 bg-brown text-cream relative" id="rsvp">
+          <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
+          <div className="max-w-4xl mx-auto relative z-10">
+            <div className="text-center mb-6">
+              <Image 
+                src="/images/divider1-white.png" 
+                alt="Divider" 
+                width={150}
+                height={30}
+                className="mx-auto w-32 h-auto opacity-80 rotate-180"
+              />
+            </div>
+            <RSVPForm />
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="py-16 px-6 text-center bg-cream relative">
+          <div className="absolute inset-0 bg-[url('/images/flowers-and-leaves.png')] bg-repeat opacity-5"></div>
+          <div className="absolute top-0 left-0 w-full">
+            <Image 
+              src="/images/divider2-top.png" 
+              alt="Divider Top" 
+              width={1920}
+              height={100}
+              className="w-full h-auto"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+          </div>
+          <div className="relative z-10 pt-8">
+            <div className="mb-8">
+              <Image 
+                src="/images/divider-flower.png" 
+                alt="Divider" 
+                width={200}
+                height={30}
+                className="mx-auto w-40 h-auto opacity-70 rotate-180"
+              />
+            </div>
+            <p className="font-dancing text-2xl md:text-3xl text-gold mb-3">Terima Kasih</p>
+            <p className="font-greatvibes text-3xl md:text-5xl text-brown mb-4">Budi & Ani</p>
+            <div className="w-20 h-0.5 bg-gold/60 mx-auto mb-6"></div>
+            <p className="text-sm">&copy; {new Date().getFullYear()} Undangan Pernikahan</p>
+          </div>
+        </footer>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
