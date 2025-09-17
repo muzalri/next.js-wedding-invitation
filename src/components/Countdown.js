@@ -39,22 +39,22 @@ export default function Countdown({ targetDate }) {
   }, [targetDate]);
 
   return (
-    <div className="w-full max-w-xl mx-auto grid grid-cols-4 gap-2 md:gap-4 my-6">
-      <div className="text-center py-2 px-1 border border-gold/60 rounded-lg bg-cream shadow-md">
-        <div className="font-greatvibes text-2xl sm:text-3xl md:text-4xl text-gold">{countdown.days}</div>
-        <div className="text-xs font-medium mt-1 text-brown">Hari</div>
+    <div className="w-full max-w-xl mx-auto grid grid-cols-4 gap-3 md:gap-5 my-8">
+      <div className="text-center py-3 px-2 border border-gold/60 rounded-lg bg-cream">
+        <div className="font-greatvibes text-3xl sm:text-4xl md:text-5xl text-gold">{countdown.days}</div>
+        <div className="text-sm font-medium mt-1 text-brown">Hari</div>
       </div>
-      <div className="text-center py-2 px-1 border border-gold/60 rounded-lg bg-cream shadow-md">
-        <div className="font-greatvibes text-2xl sm:text-3xl md:text-4xl text-gold">{countdown.hours}</div>
-        <div className="text-xs font-medium mt-1 text-brown">Jam</div>
+      <div className="text-center py-3 px-2 border border-gold/60 rounded-lg bg-cream">
+        <div className="font-greatvibes text-3xl sm:text-4xl md:text-5xl text-gold">{countdown.hours}</div>
+        <div className="text-sm font-medium mt-1 text-brown">Jam</div>
       </div>
-      <div className="text-center py-2 px-1 border border-gold/60 rounded-lg bg-cream shadow-md">
-        <div className="font-greatvibes text-2xl sm:text-3xl md:text-4xl text-gold">{countdown.minutes}</div>
-        <div className="text-xs font-medium mt-1 text-brown">Menit</div>
+      <div className="text-center py-3 px-2 border border-gold/60 rounded-lg bg-cream">
+        <div className="font-greatvibes text-3xl sm:text-4xl md:text-5xl text-gold">{countdown.minutes}</div>
+        <div className="text-sm font-medium mt-1 text-brown">Menit</div>
       </div>
-      <div className="text-center py-2 px-1 border border-gold/60 rounded-lg bg-cream shadow-md">
-        <div className="font-greatvibes text-2xl sm:text-3xl md:text-4xl text-gold">{countdown.seconds}</div>
-        <div className="text-xs font-medium mt-1 text-brown">Detik</div>
+      <div className="text-center py-3 px-2 border border-gold/60 rounded-lg bg-cream">
+        <div className="font-greatvibes text-3xl sm:text-4xl md:text-5xl text-gold">{countdown.seconds}</div>
+        <div className="text-sm font-medium mt-1 text-brown">Detik</div>
       </div>
     </div>
   );

@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
     <html lang="id" className="overflow-hidden">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="icon" href="/images/favicon.png" type="image/png" />
       </head>
       <body
         className={`${dancing.variable} ${greatVibes.variable} ${roboto.variable} antialiased bg-cream text-brown overflow-hidden`}
