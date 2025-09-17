@@ -104,11 +104,19 @@ export default function Home() {
               fontWeight: "500",
               letterSpacing: "0.05em"
             }}>Silvi & Isal</h1>
-            <p className="font-roboto text-2xl md:text-3xl text-brown mb-8 animate-fadeIn">21.12.2025</p>
+            <p 
+            style={{
+              marginTop: "0,5rem",
+              marginBottom: "0,5rem"
+            }}
+            className="font-roboto text-2xl md:text-3xl text-brown mb-8 animate-fadeIn">21.12.2025</p>
             <div className="flex justify-center w-full">
               <Countdown targetDate={weddingDate} />
             </div>
-            <div className="mt-12 mb-4 flex justify-center">
+            <div 
+            style={{ marginTop : "1rem",
+                     marginBottom : "0.5rem"         }}
+            className="mt-12 mb-4 flex justify-center">
               <Image 
                 src="/images/divider-flower.png" 
                 alt="Divider" 
@@ -164,9 +172,9 @@ export default function Home() {
                 </div>
                 
                 {/* Bride details with enhanced typography */}
-                <h3 className="font-greatvibes text-4xl sm:text-5xl text-gold mb-3">Ani Wulandari</h3>
+                <h3 className="font-greatvibes text-4xl sm:text-5xl text-gold mb-3">Silvia Nur Ardiansyah</h3>
                 <p className="text-base text-brown/70 mb-2 italic">Putri dari</p>
-                <p className="font-medium text-lg text-brown">Bapak & Ibu Wulandari</p>
+                <p className="font-medium text-lg text-brown">Bapak Saiful Bachri & Ibu Yeni Nurdiansyah</p>
               </div>
               
               {/* Decorative "&" symbol for larger screens */}
@@ -190,9 +198,9 @@ export default function Home() {
                 </div>
                 
                 {/* Groom details with enhanced typography */}
-                <h3 className="font-greatvibes text-4xl sm:text-5xl text-gold mb-3">Budi Santoso</h3>
+                <h3 className="font-greatvibes text-4xl sm:text-5xl text-gold mb-3">Isal</h3>
                 <p className="text-base text-brown/70 mb-2 italic">Putra dari</p>
-                <p className="font-medium text-lg text-brown">Bapak & Ibu Santoso</p>
+                <p className="font-medium text-lg text-brown">Bapak & Ibu Isal</p>
               </div>
             </div>
           </div>
@@ -211,7 +219,12 @@ export default function Home() {
                 className="mx-auto w-32 h-auto opacity-80"
               />
             </div>
-            <h2 className="font-greatvibes text-4xl md:text-5xl mb-8">Acara Pernikahan</h2>
+            <h2 className="font-greatvibes text-4xl md:text-5xl mb-8"
+            style={{
+                fontSize: "clamp(2.5rem, 2rem + 2vw, 4rem)",
+                fontWeight: "500",
+                letterSpacing: "0.05em"
+              }}>Acara Pernikahan</h2>
             <div className="w-16 h-0.5 bg-gold mx-auto mb-10"></div>
             <div className="grid md:grid-cols-2 gap-6 md:gap-8">
               <div className="ceremony p-5 sm:p-6 border border-gold/60 rounded-lg bg-brown/80 backdrop-blur-sm shadow-lg relative">
@@ -223,14 +236,9 @@ export default function Home() {
                   <h3 className="font-greatvibes text-3xl sm:text-4xl text-gold mb-3">Akad Nikah</h3>
                   <div className="w-20 h-0.5 bg-gold/60 mx-auto mb-4"></div>
                   <div className="space-y-3">
-                    <p className="mb-1 text-lg"><strong className="text-gold">Tanggal:</strong> Kamis, 25 Desember 2025</p>
-                    <p className="mb-1 text-lg"><strong className="text-gold">Waktu:</strong> 09:00 WIB</p>
-                    <p className="mb-4 text-lg"><strong className="text-gold">Tempat:</strong> Grand Ballroom, Hotel Majestic</p>
+                    <p className="mb-1 text-lg"><strong className="text-gold">Tanggal:</strong> Minggu, 21 Desember 2025</p>
+                    <p className="mb-1 text-lg"><strong className="text-gold">Waktu:</strong> 08:00 WIB</p>
                   </div>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" 
-                     className="inline-block px-4 py-2 mt-2 border border-gold text-gold rounded hover:bg-gold hover:text-brown transition-colors">
-                    Lihat Lokasi
-                  </a>
                 </div>
               </div>
               <div className="reception p-5 sm:p-6 border border-gold/60 rounded-lg bg-brown/80 backdrop-blur-sm shadow-lg relative">
@@ -244,14 +252,97 @@ export default function Home() {
                   <div className="space-y-3">
                     <p className="mb-1 text-lg"><strong className="text-gold">Tanggal:</strong> minggu, 21 Desember 2025</p>
                     <p className="mb-1 text-lg"><strong className="text-gold">Waktu:</strong> 13:00 WIB</p>
-                    <p className="mb-4 text-lg"><strong className="text-gold">Tempat:</strong> Grand Ballroom, Hotel Majestic</p>
                   </div>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" 
-                     className="inline-block px-4 py-2 mt-2 border border-gold text-gold rounded hover:bg-gold hover:text-brown transition-colors">
-                    Lihat Lokasi
-                  </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Location Section */}
+         <section className="py-20 px-6 bg-cream relative flex flex-col items-center justify-center" id="lokasi">
+          <div className="absolute inset-0 bg-[url('/images/flowers-and-leaves.png')] bg-repeat opacity-5"></div>
+          
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-0 w-24 h-24 md:w-32 md:h-32 bg-[url('/images/flower-corner.svg')] bg-no-repeat bg-contain opacity-20"></div>
+          <div className="absolute bottom-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-[url('/images/flower-corner.svg')] bg-no-repeat bg-contain opacity-20 rotate-180"></div>
+          
+          <div className="max-w-5xl mx-auto text-center relative z-10 w-full">
+            <div className="flex justify-center"
+            style={{ marginBottom : "1rem",
+              marginTop : "1rem"
+             }}>
+              <Image 
+                src="/images/divider-flower.png" 
+                alt="Divider" 
+                width={150}
+                height={30}
+                className="mx-auto w-36 h-auto opacity-80"
+              />
+            </div>
+            <h2 
+              className="font-greatvibes text-4xl md:text-5xl text-brown mb-8"
+              style={{ textShadow: "1px 1px 3px rgba(139, 69, 19, 0.2)",
+                marginBottom : "1rem",
+                fontSize: "clamp(2.5rem, 2rem + 2vw, 4rem)",
+                fontWeight: "500",
+                letterSpacing: "0.05em"
+               }}
+               
+            >Lokasi Acara</h2>
+            <div className="w-24 h-0.5 bg-gold mx-auto mb-10"></div>
+            
+
+            
+            {/* Google Maps Embed with enhanced styling */}
+            <div 
+
+            className="mt-8 rounded-xl overflow-hidden shadow-xl border-4 border-gold/20 relative group transform transition-transform hover:scale-[1.01] duration-500">
+              <div className="absolute inset-0 bg-gradient-to-b from-gold/20 to-transparent opacity-50 pointer-events-none z-10"></div>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4975896510987!2d106.80493491477129!3d-6.582730895230537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5d2e602b501%3A0x25a12f0f97fac4ee!2sPusat%20Penelitian%20Ilmu%20Pengetahuan%20dan%20Teknologi%20(PUSPIPTEK)!5e0!3m2!1sen!2sid!4v1631234567890!5m2!1sen!2sid" 
+                width="100%" 
+                height="450" 
+                style={{ border: 0 }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Lokasi Acara Pernikahan"
+                className="w-full z-0"
+              ></iframe>
+            </div>
+            
+            <div 
+            style={{ marginTop : "1rem"}}
+            className="mt-10 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+
+              <a 
+                href="https://goo.gl/maps/D5JZvCMGjsXfGW4J6" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center px-6 py-3 bg-brown text-gold rounded-full border border-gold/40 hover:bg-gold hover:text-brown transition-colors duration-300 shadow-md group"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 group-hover:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Petunjuk Arah Lengkap
+              </a>
+            </div>
+            <div 
+            style={{ marginTop : "1rem"}}
+            className="mt-10 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+              <a 
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan%20Silvia%20%26%20Isal&dates=20251221T080000/20251221T130000&details=Kami%20mengundang%20Anda%20ke%20acara%20pernikahan%20Silvia%20dan%20Isal.&location=PPIB%20Bogor,%20Jln%20Padjajaran,%20Bogor,%20Jawa%20Barat"
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center px-6 py-3 bg-brown text-gold rounded-full border border-gold/40 hover:bg-gold hover:text-brown transition-colors duration-300 shadow-md group"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 group-hover:animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Simpan ke Kalender
+              </a>
             </div>
           </div>
         </section>
