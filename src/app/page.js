@@ -208,7 +208,7 @@ export default function Home() {
 
         {/* Event Details Section */}
         <section className="py-16 px-6 bg-brown text-cream relative flex items-center justify-center" id="event">
-          <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
+          <div className="absolute inset-0 bg-[url('/images/flowers-and-leaves.png')] bg-repeat opacity-5"></div>
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <div className="mb-6">
               <Image 
@@ -229,9 +229,9 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-6 md:gap-8">
               <div className="ceremony p-5 sm:p-6 border border-gold/60 rounded-lg bg-brown/80 backdrop-blur-sm relative">
                 {/* Flower decoration */}
-                <div className="absolute -top-4 -left-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 hidden sm:block"></div>
+                {/* <div className="absolute -top-4 -left-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 hidden sm:block"></div>
                 <div className="absolute -bottom-4 -right-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 rotate-180 hidden sm:block"></div>
-                
+                 */}
                 <div className="relative z-10">
                   <h3 
                   style={{fontSize: "1.5rem"}}
@@ -245,9 +245,9 @@ export default function Home() {
               </div>
               <div className="reception p-5 sm:p-6 border border-gold/60 rounded-lg bg-brown/80 backdrop-blur-sm relative">
                 {/* Flower decoration */}
-                <div className="absolute -top-4 -left-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 hidden sm:block"></div>
+                {/* <div className="absolute -top-4 -left-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 hidden sm:block"></div>
                 <div className="absolute -bottom-4 -right-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 rotate-180 hidden sm:block"></div>
-                
+                 */}
                 <div className="relative z-10">
                   <h3
                    style={{fontSize: "1.5rem"}}
@@ -386,7 +386,7 @@ export default function Home() {
 
         {/* RSVP Section */}
         <section className="py-16 px-6 bg-brown text-cream relative flex items-center justify-center" id="rsvp">
-          <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
+          <div className="absolute inset-0 bg-[url('/images/flowers-and-leaves.png')] bg-repeat opacity-5"></div>
           <div className="max-w-4xl mx-auto relative z-10">
             <div className="text-center mb-6">
               <Image 
