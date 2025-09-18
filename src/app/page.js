@@ -227,13 +227,15 @@ export default function Home() {
               }}>Acara Pernikahan</h2>
             <div className="w-16 h-0.5 bg-gold mx-auto mb-10"></div>
             <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-              <div className="ceremony p-5 sm:p-6 border border-gold/60 rounded-lg bg-brown/80 backdrop-blur-sm shadow-lg relative">
+              <div className="ceremony p-5 sm:p-6 border border-gold/60 rounded-lg bg-brown/80 backdrop-blur-sm relative">
                 {/* Flower decoration */}
                 <div className="absolute -top-4 -left-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 hidden sm:block"></div>
                 <div className="absolute -bottom-4 -right-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 rotate-180 hidden sm:block"></div>
                 
                 <div className="relative z-10">
-                  <h3 className="font-greatvibes text-3xl sm:text-4xl text-gold mb-3">Akad Nikah</h3>
+                  <h3 
+                  style={{fontSize: "1.5rem"}}
+                  className="font-greatvibes text-3xl sm:text-4xl text-gold mb-3">Akad Nikah</h3>
                   <div className="w-20 h-0.5 bg-gold/60 mx-auto mb-4"></div>
                   <div className="space-y-3">
                     <p className="mb-1 text-lg"><strong className="text-gold">Tanggal:</strong> Minggu, 21 Desember 2025</p>
@@ -241,13 +243,15 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="reception p-5 sm:p-6 border border-gold/60 rounded-lg bg-brown/80 backdrop-blur-sm shadow-lg relative">
+              <div className="reception p-5 sm:p-6 border border-gold/60 rounded-lg bg-brown/80 backdrop-blur-sm relative">
                 {/* Flower decoration */}
                 <div className="absolute -top-4 -left-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 hidden sm:block"></div>
                 <div className="absolute -bottom-4 -right-4 w-12 sm:w-16 h-12 sm:h-16 bg-[url('/images/flower-corner.svg')] bg-contain bg-no-repeat opacity-70 rotate-180 hidden sm:block"></div>
                 
                 <div className="relative z-10">
-                  <h3 className="font-greatvibes text-3xl sm:text-4xl text-gold mb-3">Resepsi</h3>
+                  <h3
+                   style={{fontSize: "1.5rem"}}
+                  className="font-greatvibes text-3xl sm:text-4xl text-gold mb-3">Resepsi</h3>
                   <div className="w-20 h-0.5 bg-gold/60 mx-auto mb-4"></div>
                   <div className="space-y-3">
                     <p className="mb-1 text-lg"><strong className="text-gold">Tanggal:</strong> minggu, 21 Desember 2025</p>
@@ -300,7 +304,7 @@ export default function Home() {
             className="mt-8 rounded-xl overflow-hidden shadow-xl border-4 border-gold/20 relative group transform transition-transform hover:scale-[1.01] duration-500">
               <div className="absolute inset-0 bg-gradient-to-b from-gold/20 to-transparent opacity-50 pointer-events-none z-10"></div>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4975896510987!2d106.80493491477129!3d-6.582730895230537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5d2e602b501%3A0x25a12f0f97fac4ee!2sPusat%20Penelitian%20Ilmu%20Pengetahuan%20dan%20Teknologi%20(PUSPIPTEK)!5e0!3m2!1sen!2sid!4v1631234567890!5m2!1sen!2sid" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15863.293770064885!2d106.80967534990966!3d-6.608064295517928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5e77c710065%3A0x88514bbe3e8884cc!2sPPIB%20Bogor!5e0!3m2!1sen!2sid!4v1695040220656!5m2!1sen!2sid" 
                 width="100%" 
                 height="450" 
                 style={{ border: 0 }} 
@@ -313,14 +317,16 @@ export default function Home() {
             </div>
             
             <div 
-            style={{ marginTop : "1rem"}}
+            style={{ marginTop : "1rem",
+                
+            }}
             className="mt-10 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
 
               <a 
-                href="https://goo.gl/maps/D5JZvCMGjsXfGW4J6" 
+                href="https://www.google.com/maps/place/PPIB+Bogor/@-6.6080643,106.8096753,14.42z/data=!4m6!3m5!1s0x2e69c5e77c710065:0x88514bbe3e8884cc!8m2!3d-6.6075666!4d106.8091148!16s%2Fg%2F11bc7pcbr_?entry=ttu&g_ep=EgoyMDI1MDkxNS4wIKXMDSoASAFQAw%3D%3D" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="flex items-center px-6 py-3 bg-brown text-gold rounded-full border border-gold/40 hover:bg-gold hover:text-brown transition-colors duration-300 shadow-md group"
+                className="flex items-center px-6 py-3 bg-brown text-gold rounded-full border border-gold/40 hover:bg-gold hover:text-brown transition-colors duration-300 group"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 group-hover:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -330,13 +336,15 @@ export default function Home() {
               </a>
             </div>
             <div 
-            style={{ marginTop : "1rem"}}
+            style={{ marginTop : "1rem",
+              marginBottom : "1rem"
+            }}
             className="mt-10 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
               <a 
-                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan%20Silvia%20%26%20Isal&dates=20251221T080000/20251221T130000&details=Kami%20mengundang%20Anda%20ke%20acara%20pernikahan%20Silvia%20dan%20Isal.&location=PPIB%20Bogor,%20Jln%20Padjajaran,%20Bogor,%20Jawa%20Barat"
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan%20Silvia%20%26%20Isal&dates=20251221T080000/20251221T130000&details=Kami%20mengundang%20Anda%20ke%20acara%20pernikahan%20Silvia%20dan%20Isal.&location=PPIB%20Bogor,%20-6.6075666,%20106.8091148"
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="flex items-center px-6 py-3 bg-brown text-gold rounded-full border border-gold/40 hover:bg-gold hover:text-brown transition-colors duration-300 shadow-md group"
+                className="flex items-center px-6 py-3 bg-brown text-gold rounded-full border border-gold/40 hover:bg-gold hover:text-brown transition-colors duration-300 group"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 group-hover:animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -351,7 +359,7 @@ export default function Home() {
         <section className="py-16 px-6 bg-cream relative flex items-center justify-center" id="gallery">
           <div className="absolute inset-0 bg-[url('/images/flowers-and-leaves.png')] bg-repeat opacity-5"></div>
           <div className="max-w-4xl mx-auto text-center relative z-10">
-            <div className="mb-6">
+            <div className="mb-6 flex justify-center" >
               <Image 
                 src="/images/divider-leaves.png" 
                 alt="Divider" 
@@ -360,7 +368,11 @@ export default function Home() {
                 className="mx-auto w-32 h-auto opacity-70"
               />
             </div>
-            <h2 className="font-greatvibes text-4xl md:text-5xl text-brown mb-8">Galeri Kami</h2>
+            <h2 
+             style={{fontSize: "3rem",
+              marginBottom: "1rem"
+             }}
+            className="font-greatvibes text-4xl md:text-5xl text-brown">Galeri Kami</h2>
             <div className="w-16 h-0.5 bg-gold mx-auto mb-10"></div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
               {[1, 2, 3, 4, 5, 6].map((item) => (
