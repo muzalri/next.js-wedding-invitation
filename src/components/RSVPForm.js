@@ -306,7 +306,7 @@ export default function RSVPForm() {
               justifyContent: "center", 
               padding: "12px", 
               color: "#d4af37", 
-              backgroundColor: "rgba(61, 30, 8, 0.8)", 
+              // backgroundColor: "rgba(61, 30, 8, 0.8)", 
               height: "100%" 
             }}>
               <svg style={{ width: "20px", height: "20px" }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -385,7 +385,7 @@ export default function RSVPForm() {
               justifyContent: "center", 
               padding: "12px", 
               color: "#d4af37", 
-              backgroundColor: "rgba(61, 30, 8, 0.8)", 
+              // backgroundColor: "rgba(61, 30, 8, 0.8)", 
               height: "100%" 
             }}>
               <svg style={{ width: "20px", height: "20px" }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -464,7 +464,7 @@ export default function RSVPForm() {
               justifyContent: "center", 
               padding: "12px", 
               color: "#d4af37", 
-              backgroundColor: "rgba(61, 30, 8, 0.8)", 
+              // backgroundColor: "rgba(61, 30, 8, 0.8)", 
               height: "100%" 
             }}>
               <svg style={{ width: "20px", height: "20px" }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -491,7 +491,7 @@ export default function RSVPForm() {
                   transition: "all 0.3s ease"
                 }}
               >
-                <option value="" disabled hidden>Kehadiran Anda</option>
+                <option value="" disabled hidden></option>
                 <option value="yes">Ya, saya akan hadir</option>
                 <option value="no">Maaf, saya tidak bisa hadir</option>
               </select>
@@ -566,7 +566,7 @@ export default function RSVPForm() {
               justifyContent: "center", 
               padding: "12px", 
               color: "#d4af37", 
-              backgroundColor: "rgba(61, 30, 8, 0.8)", 
+              // backgroundColor: "rgba(61, 30, 8, 0.8)", 
               height: "100%" 
             }}>
               <svg style={{ width: "20px", height: "20px" }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -687,7 +687,7 @@ export default function RSVPForm() {
               justifyContent: "center", 
               padding: "15px 12px", 
               color: "#d4af37", 
-              backgroundColor: "rgba(61, 30, 8, 0.8)", 
+              // backgroundColor: "rgba(61, 30, 8, 0.8)", 
               height: "100%" 
             }}>
               <svg style={{ width: "20px", height: "20px", marginTop: "3px" }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
