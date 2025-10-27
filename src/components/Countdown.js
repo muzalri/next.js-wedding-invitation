@@ -39,23 +39,122 @@ export default function Countdown({ targetDate }) {
   }, [targetDate]);
 
   return (
-    <div className="w-full max-w-xl mx-auto grid grid-cols-4 gap-3 md:gap-5 my-8">
-      <div className="text-center py-3 px-2 border border-gold/60 rounded-lg bg-cream">
-        <div className="font-greatvibes text-3xl sm:text-4xl md:text-5xl text-gold">{countdown.days}</div>
-        <div className="text-sm font-medium mt-1 text-brown">Hari</div>
+    <div style={{
+      width: '100%',
+      maxWidth: '672px',
+      margin: '32px auto',
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4, 1fr)',
+      gap: '12px'
+    }}>
+      <div style={{
+        textAlign: 'center',
+        padding: '12px 8px',
+        border: '1px solid rgba(212, 175, 55, 0.6)',
+        borderRadius: '8px',
+        background: '#f8f3e8'
+      }}>
+        <div style={{
+          fontFamily: 'Great Vibes, cursive',
+          fontSize: '1.875rem',
+          color: '#d4af37'
+        }}>
+          {countdown.days}
+        </div>
+        <div style={{
+          fontSize: '14px',
+          fontWeight: 500,
+          marginTop: '4px',
+          color: '#6d4c3d'
+        }}>
+          Hari
+        </div>
       </div>
-      <div className="text-center py-3 px-2 border border-gold/60 rounded-lg bg-cream">
-        <div className="font-greatvibes text-3xl sm:text-4xl md:text-5xl text-gold">{countdown.hours}</div>
-        <div className="text-sm font-medium mt-1 text-brown">Jam</div>
+      <div style={{
+        textAlign: 'center',
+        padding: '12px 8px',
+        border: '1px solid rgba(212, 175, 55, 0.6)',
+        borderRadius: '8px',
+        background: '#f8f3e8'
+      }}>
+        <div style={{
+          fontFamily: 'Great Vibes, cursive',
+          fontSize: '1.875rem',
+          color: '#d4af37'
+        }}>
+          {countdown.hours}
+        </div>
+        <div style={{
+          fontSize: '14px',
+          fontWeight: 500,
+          marginTop: '4px',
+          color: '#6d4c3d'
+        }}>
+          Jam
+        </div>
       </div>
-      <div className="text-center py-3 px-2 border border-gold/60 rounded-lg bg-cream">
-        <div className="font-greatvibes text-3xl sm:text-4xl md:text-5xl text-gold">{countdown.minutes}</div>
-        <div className="text-sm font-medium mt-1 text-brown">Menit</div>
+      <div style={{
+        textAlign: 'center',
+        padding: '12px 8px',
+        border: '1px solid rgba(212, 175, 55, 0.6)',
+        borderRadius: '8px',
+        background: '#f8f3e8'
+      }}>
+        <div style={{
+          fontFamily: 'Great Vibes, cursive',
+          fontSize: '1.875rem',
+          color: '#d4af37'
+        }}>
+          {countdown.minutes}
+        </div>
+        <div style={{
+          fontSize: '14px',
+          fontWeight: 500,
+          marginTop: '4px',
+          color: '#6d4c3d'
+        }}>
+          Menit
+        </div>
       </div>
-      <div className="text-center py-3 px-2 border border-gold/60 rounded-lg bg-cream">
-        <div className="font-greatvibes text-3xl sm:text-4xl md:text-5xl text-gold">{countdown.seconds}</div>
-        <div className="text-sm font-medium mt-1 text-brown">Detik</div>
+      <div style={{
+        textAlign: 'center',
+        padding: '12px 8px',
+        border: '1px solid rgba(212, 175, 55, 0.6)',
+        borderRadius: '8px',
+        background: '#f8f3e8'
+      }}>
+        <div style={{
+          fontFamily: 'Great Vibes, cursive',
+          fontSize: '1.875rem',
+          color: '#d4af37'
+        }}>
+          {countdown.seconds}
+        </div>
+        <div style={{
+          fontSize: '14px',
+          fontWeight: 500,
+          marginTop: '4px',
+          color: '#6d4c3d'
+        }}>
+          Detik
+        </div>
       </div>
+
+      <style jsx>{`
+        @media (min-width: 640px) {
+          div[style*="fontSize: '1.875rem'"] {
+            font-size: 2.25rem !important;
+          }
+        }
+        @media (min-width: 768px) {
+          div[style*="fontSize: '1.875rem'"] {
+            font-size: 3rem !important;
+          }
+          div[style*="gap: '12px'"] {
+            gap: 20px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

@@ -177,10 +177,10 @@ export default function RSVPForm() {
   };
 
   return (
-    <div className="max-w-xl mx-auto text-center relative" style={{ padding: "0 15px" }}>
-      <div className="relative z-10" style={{ marginBottom: "20px" }}>
-        <h2 className="font-dancing text-xl text-gold/80 mb-2" style={{ color: "#d4af37", marginBottom: "8px", fontSize: "1.5rem" }}>Reservasi</h2>
-        <h3 className="font-greatvibes text-4xl md:text-5xl text-gold mb-4" style={{ color: "#d4af37", fontSize: "2.5rem" }}>Konfirmasi Kehadiran</h3>
+    <div style={{ maxWidth: '672px', margin: '0 auto', textAlign: 'center', position: 'relative', padding: '0 15px' }}>
+      <div style={{ position: 'relative', zIndex: 10, marginBottom: '20px' }}>
+        <h2 style={{ fontFamily: 'Dancing Script, cursive', fontSize: '1.5rem', color: '#d4af37', marginBottom: '8px' }}>Reservasi</h2>
+        <h3 style={{ fontFamily: 'Great Vibes, cursive', fontSize: '2.5rem', color: '#d4af37', marginBottom: '16px' }}>Konfirmasi Kehadiran</h3>
         <div style={{ width: "150px", height: "2px", backgroundColor: "#d4af37", margin: "0 auto 20px auto", opacity: 0.7 }}></div>
         {/* <p style={{ color: "#f5f5dc", marginBottom: "24px", maxWidth: "420px", margin: "0 auto 30px auto", fontSize: "15px", lineHeight: "1.5" }}>
           Kami akan sangat senang jika Anda bisa hadir di hari bahagia kami. Mohon konfirmasi kehadiran Anda melalui formulir di bawah ini.
